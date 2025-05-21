@@ -2,10 +2,11 @@
 
 This repository describes the **BISON** framework (*Blockchain Interpretable Success prediction for SOcial media NFTs*), which leverages linguistic statistics and blockchain-derived features to model and explain the success of blockchain-native articles (e.g., writing NFTs).
 
-# Feature Description 
-Below are the features used in the model, categorized by type:
-
 ---
+
+# Feature Description 
+Below are the features used in the model, categorized by type. These features are used in a "multimodal", explainable ML pipeline to predict and interpret success on decentralized content platforms.
+
 ## Readability Indices & Linguistic Statistics
 
 These features are extracted from the textual content of articles:
@@ -86,5 +87,3 @@ For each token (`BTC`, `ETH`, `OP`, `USDT`, `USDC`, `DAI`) at the publication da
   Terms include: `nft`, `crypto`, `bitcoin`, `ethereum`, `optimism`
 
 ---
-
-✅ These features are used in a multimodal, explainable ML pipeline to predict and interpret success on decentralized content platforms.
