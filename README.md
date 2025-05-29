@@ -13,15 +13,15 @@ These features are extracted from the textual content of articles:
 
 ### Readability Metrics
 
-- **`Kincaid Grade Level`**: U.S. grade level required to understand the text.  
-- **`Automated Readability Index (ARI)`**: Based on characters and sentence length.  
-- **`Coleman-Liau Index`**: Grade level based on character counts.  
-- **`Flesch Reading Ease`**: Score from 0–100; higher means easier.  
-- **`Gunning Fog Index`**: Years of formal education required.  
-- **`LIX`**: Index using sentence and word length.  
-- **`SMOG Index`**: Based on polysyllabic word frequency.  
-- **`RIX`**: Long words (7+ letters) per 100 words.  
-- **`Dale–Chall Index`**: Based on unfamiliar words from a standard list.
+- `Kincaid Grade Level`: U.S. grade level required to understand the text.  
+- `Automated Readability Index (ARI)`: Based on characters and sentence length.  
+- `Coleman-Liau Index`: Grade level based on character counts.  
+- `Flesch Reading Ease`: Score from 0–100; higher means easier.  
+- `Gunning Fog Index`: Years of formal education required.  
+- `LIX`: Index using sentence and word length.  
+- `SMOG Index`: Based on polysyllabic word frequency.  
+- `RIX`: Long words (7+ letters) per 100 words.  
+- `Dale–Chall Index`: Based on unfamiliar words from a standard list.
 
 ### Other Linguistic Features
 
@@ -38,6 +38,39 @@ These features are extracted from the textual content of articles:
 - `paragraphs`: Total paragraph count  
 - `long_words`: Words with more than 6 letters  
 - `complex_words`: Polysyllabic and uncommon words  
+
+### Advanced Linguistic & NLP Features
+
+- `cleaned_text`: Text after removing noise and irrelevant characters  
+- `language`: Detected language of the text  
+- `cleaned_body`: Cleaned version of the article body text  
+- `cleaned_title`: Cleaned article title  
+- `processed_cleaned_text`: Text after further processing like normalization  
+- `cleaned_text_tokenized`: Tokenized version of the cleaned text  
+- `cleaned_text_lemmatized`: Lemmatized tokens (base forms of words)  
+- `cleaned_text_POS`: Part-of-speech tagging of tokens  
+- `cleaned_text_sentiment`: Sentiment score derived from text  
+- `words_body`: Word count in the article body  
+- `words_title`: Word count in the title  
+- `words_text`: Total word count combining title and body  
+- `normalized_tfidf_sum`: Normalized sum of TF-IDF scores across document  
+- `verbs_density`: Density of verbs in text  
+- `adjectives_density`: Density of adjectives in text  
+- `nouns_density`: Density of nouns in text
+
+---
+
+## Topic Categories
+
+Thematic topics extracted from articles:
+
+- `topic_T1: Gaming, Virtual Worlds & Characters`  
+- `topic_T2: Wallets, Airdrops & Ethereum Tools`  
+- `topic_T3: Web3, Blockchain & Digital Platforms`  
+- `topic_T4: DeFi, Market Strategies & Liquidity`  
+- `topic_T5: Blockchain, Transactions & Smart Contracts`  
+- `topic_T6: Web3 Launches, Rewards & Creators`  
+- `topic_T7: Human Thoughts, Emotions & Reflections`
 
 ---
 
@@ -62,28 +95,64 @@ For each token (`BTC`, `ETH`, `OP`, `USDT`, `USDC`, `DAI`) at the publication da
 
 ### Blockchain Activity
 
-- `daily_transactions_optimism`: Daily tx count on Optimism  
-  ↳ Source: [Optimism Etherscan Chart](https://optimistic.etherscan.io/chart/tx)  
+- `daily_transactions_optimism`: Daily transaction count on Optimism network  
 - `eth_active_addresses_total`: Total active Ethereum addresses  
-- `eth_active_addresses_sender`: Active senders on Ethereum  
-- `eth_active_addresses_receiver`: Active receivers on Ethereum  
-- `optimism_active_addresses_total`: Total active addresses on Optimism  
-  ↳ Source: [Ethereum Etherscan Chart](https://etherscan.io/chart/active-address)
+- `eth_active_addresses_sender`: Active sending addresses on Ethereum  
+- `eth_active_addresses_receiver`: Active receiving addresses on Ethereum  
+- `optimism_active_addresses_total`: Total active addresses on Optimism network
 
-### Author Wallet Features
+---
 
+## Author Wallet Features
+
+- `author_address`: Wallet address of the author  
 - `author_ether_balance`: ETH balance of author's wallet  
 - `author_transactions_number`: Total blockchain transactions by author
 
-### Author Platform Activity
+## Author Platform Activity
 
-- `authorPostCount`: Number of published articles  
-- `authorTotalSales`: Number of sold Writing NFTs  
-- `authorTotalRevenue`: Total revenue (in ETH) from NFT sales
-
-### External Signals
-
-- `week_google_searches_<x>`: Google Trends score (1–100) during publication week  
-  Terms include: `nft`, `crypto`, `bitcoin`, `ethereum`, `optimism`
+- `authorPostCount`: Number of published articles by author  
+- `authorTotalSales`: Number of Writing NFTs sold by author  
+- `authorTotalRevenue`: Total ETH revenue from NFT sales by author
 
 ---
+
+## NFT and Article Metadata
+
+- `writing_nft`: Identifier indicating the article is minted as a writing NFT  
+- `Author Homepage`: URL of the author's homepage or profile  
+- `Total Sold(ETH)`: Total ETH earned from all sales of the NFT  
+- `Total Sold Numbers`: Total quantity of NFTs sold  
+- `Total Buyers`: Number of unique buyers  
+- `Price(ETH)`: Listing or sale price of the NFT  
+- `nft_address`: Blockchain address of the NFT contract  
+- `collection`: Name of the NFT collection  
+- `fees`: Associated fees (e.g., royalties) on NFT sales  
+- `created_date`: Date of NFT or article creation  
+- `link`: URL to the article or NFT page  
+- `digest`: Unique content hash or digest  
+- `transaction_id`: Blockchain transaction ID for mint or sale  
+- `body`: Raw text body of the article  
+- `timestamp`: Timestamp of article or NFT event  
+- `title`: Raw article title  
+- `year`: Year of publication  
+- `month`: Month of publication (values from 1 to 12)  
+- `day`: Day of publication  
+- `weekday`: Weekday of publication, encoded as 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
+
+---
+
+## Success Metrics
+
+- `Success`: Numeric indicator of article success  
+- `SuccessBinary`: Binary success label (success/failure)
+
+---
+
+## External Signals
+
+- `week_google_searches_nft`: Google Trends score for "nft" in publication week  
+- `week_google_searches_crypto`: Google Trends score for "crypto"  
+- `week_google_searches_bitcoin`: Google Trends score for "bitcoin"  
+- `week_google_searches_ethereum`: Google Trends score for "ethereum"  
+- `week_google_searches_optimism`: Google Trends score for "optimism"
