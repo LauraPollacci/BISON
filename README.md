@@ -11,19 +11,13 @@ Below are the features used in the model, categorized by type. These features ar
 
 These features are extracted from the textual content of articles:
 
-### Readability Metrics
+### Readability Metrics (3)
 
 - `Kincaid Grade Level`: U.S. grade level required to understand the text.  
-- `Automated Readability Index (ARI)`: Based on characters and sentence length.  
-- `Coleman-Liau Index`: Grade level based on character counts.  
 - `Flesch Reading Ease`: Score from 0–100; higher means easier.  
 - `Gunning Fog Index`: Years of formal education required.  
-- `LIX`: Index using sentence and word length.  
-- `SMOG Index`: Based on polysyllabic word frequency.  
-- `RIX`: Long words (7+ letters) per 100 words.  
-- `Dale–Chall Index`: Based on unfamiliar words from a standard list.
 
-### Other Linguistic Features
+### Statistical Linguistic Features (13)
 
 - `characters_per_word`: Average characters per word  
 - `syll_per_word`: Average syllables per word  
@@ -39,7 +33,7 @@ These features are extracted from the textual content of articles:
 - `long_words`: Words with more than 6 letters  
 - `complex_words`: Polysyllabic and uncommon words  
 
-### Advanced Linguistic & NLP Features
+### Advanced Linguistic & NLP Features (16)
 
 - `cleaned_text`: Text after removing noise and irrelevant characters  
 - `language`: Detected language of the text  
@@ -60,10 +54,11 @@ These features are extracted from the textual content of articles:
 
 ---
 
-## Topic Categories
+## Topic-Related (8)
 
 Thematic topics extracted from articles:
 
+- `topic`: (categorical)  Represents the main topic of the article. Possible values are: T1: Gaming, Virtual Worlds & Characters; T2: Wallets, Airdrops & Ethereum Tools; T3: Web3, Blockchain & Digital Platforms; T4: DeFi, Market Strategies & Liquidity; T5: Blockchain, Transactions & Smart Contracts; T6: Web3 Launches, Rewards & Creators; T7: Human Thoughts, Emotions & Reflections.
 - `topic_T1: Gaming, Virtual Worlds & Characters`  
 - `topic_T2: Wallets, Airdrops & Ethereum Tools`  
 - `topic_T3: Web3, Blockchain & Digital Platforms`  
@@ -74,17 +69,31 @@ Thematic topics extracted from articles:
 
 ---
 
+## Keyword-Based (7)
+For each keyword (`nft`, `web3`, `community`, `blockchain`, `crypto`, `wallet`, `chain`):
+
+- `<keyword>`: indicates the presence (1) or absence (0) of the keyword in the article text.
+
+---
+
 ## Blockchain-Related Features
 
 These features capture blockchain and crypto ecosystem signals relevant to each article:
 
-### Temporal
+### Temporal (7)
 
 - `days_since_epoch`: Days elapsed since article publication
+- `publication_date`: Full publication date of the article or NFT in `YYYY-MM-DD` format.
+- `year_month`: Publication date grouped by year and month in `YYYY-MM` format, useful for temporal aggregation.
+- `year`: Year of publication  
+- `month`: Month of publication (values from 1 to 12)  
+- `day`: Day of publication  
+- `weekday`: Weekday of publication, encoded as 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
 
-### Market Indicators
 
-For each token (`BTC`, `ETH`, `OP`, `USDT`, `USDC`, `DAI`) at the publication date:
+### Market Indicators (6*6=36)
+
+For each token (`BTC`, `TETHER`, `OPTIMISM`, `ETH`, `USDC`, `DAI`) at the publication date:
 
 - `open_<token>_usd`: Opening price  
 - `last_<token>_usd`: Closing price  
@@ -93,7 +102,7 @@ For each token (`BTC`, `ETH`, `OP`, `USDT`, `USDC`, `DAI`) at the publication da
 - `vol_<token>`: Trading volume  
 - `var%_<token>`: Daily % price change  
 
-### Blockchain Activity
+### Blockchain Activity (5)
 
 - `daily_transactions_optimism`: Daily transaction count on Optimism network  
 - `eth_active_addresses_total`: Total active Ethereum addresses  
@@ -103,24 +112,21 @@ For each token (`BTC`, `ETH`, `OP`, `USDT`, `USDC`, `DAI`) at the publication da
 
 ---
 
-## Author Wallet Features
+## Author Wallet Features and Platform Activity (7)
 
 - `author_address`: Wallet address of the author  
 - `author_ether_balance`: ETH balance of author's wallet  
 - `author_transactions_number`: Total blockchain transactions by author
-
-## Author Platform Activity
-
 - `authorPostCount`: Number of published articles by author  
 - `authorTotalSales`: Number of Writing NFTs sold by author  
 - `authorTotalRevenue`: Total ETH revenue from NFT sales by author
+- `Author Homepage`: URL of the author's homepage or profile  
 
 ---
 
-## NFT and Article Metadata
+## NFT and Article Metadata (15)
 
 - `writing_nft`: Identifier indicating the article is minted as a writing NFT  
-- `Author Homepage`: URL of the author's homepage or profile  
 - `Total Sold(ETH)`: Total ETH earned from all sales of the NFT  
 - `Total Sold Numbers`: Total quantity of NFTs sold  
 - `Total Buyers`: Number of unique buyers  
@@ -135,21 +141,17 @@ For each token (`BTC`, `ETH`, `OP`, `USDT`, `USDC`, `DAI`) at the publication da
 - `body`: Raw text body of the article  
 - `timestamp`: Timestamp of article or NFT event  
 - `title`: Raw article title  
-- `year`: Year of publication  
-- `month`: Month of publication (values from 1 to 12)  
-- `day`: Day of publication  
-- `weekday`: Weekday of publication, encoded as 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
 
 ---
 
-## Success Metrics
+## Success Metrics (2)
 
 - `Success`: Numeric indicator of article success  
 - `SuccessBinary`: Binary success label (success/failure)
 
 ---
 
-## External Signals
+## Google Trends-Related (5)
 
 - `week_google_searches_nft`: Google Trends score for "nft" in publication week  
 - `week_google_searches_crypto`: Google Trends score for "crypto"  
