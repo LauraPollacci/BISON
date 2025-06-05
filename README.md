@@ -147,13 +147,6 @@ For each token (`BTC`, `TETHER`, `OPTIMISM`, `ETH`, `USDC`, `DAI`) at the public
 
 ---
 
-## Success Metrics (2)
-
-- `Success`: Numeric indicator of article success  
-- `SuccessBinary`: Binary success label (success/failure)
-
----
-
 ## Google Trends-Related (5)
 
 - `week_google_searches_nft`: Google Trends score for "nft" in publication week  
@@ -161,3 +154,11 @@ For each token (`BTC`, `TETHER`, `OPTIMISM`, `ETH`, `USDC`, `DAI`) at the public
 - `week_google_searches_bitcoin`: Google Trends score for "bitcoin"  
 - `week_google_searches_ethereum`: Google Trends score for "ethereum"  
 - `week_google_searches_optimism`: Google Trends score for "optimism"
+
+---
+
+## Success Metrics (2)
+
+- `Success`: Numeric indicator of article success  
+- `SuccessBinary`: Binary success label (success/failure)
+
