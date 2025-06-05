@@ -76,10 +76,6 @@ For each keyword (`nft`, `web3`, `community`, `blockchain`, `crypto`, `wallet`, 
 
 ---
 
-## Blockchain-Related Features
-
-These features capture blockchain and crypto ecosystem signals relevant to each article:
-
 ### Temporal (7)
 
 - `days_since_epoch`: Days elapsed since article publication
@@ -89,6 +85,13 @@ These features capture blockchain and crypto ecosystem signals relevant to each 
 - `month`: Month of publication (values from 1 to 12)  
 - `day`: Day of publication  
 - `weekday`: Weekday of publication, encoded as 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
+
+
+---
+
+## Blockchain-Related Features
+
+These features capture blockchain and crypto ecosystem signals relevant to each article:
 
 
 ### Market Indicators (6*6=36)
